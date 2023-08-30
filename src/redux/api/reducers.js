@@ -12,8 +12,6 @@ const initState = {
 const API = (state = initState, action) => {
     switch (action.type) {
         case FETCH_USERS:
-        case FETCH_VEHICLES:
-        case FETCH_REL_VEHICLES:
             return { ...state, loading: true, error: null };
 
         case GOT_RESPONSE:

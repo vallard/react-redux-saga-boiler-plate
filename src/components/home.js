@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchUsers, createUsers } from '../redux/actions'
+import { createUsers } from '../redux/actions'
 import api_endpoint from '../settings'
 
 function ShowItemsInTable({ items }) {
@@ -32,17 +32,13 @@ function ShowItemsInTable({ items }) {
 function Home() {
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(fetchVehicles());
-        dispatch(fetchUsers());
-        dispatch(fetchRelVehicles());
+        console.log("Get something from the API")
     }, [dispatch])
 
     const [qty, setQty] = useState("1")
     const [tab, setTab] = useState('users')
 
     const users = useSelector((state) => state.API.users);
-    const vehicles = useSelector((state) => state.API.vehicles);
-    const relVehicles = useSelector((state) => state.API.relVehicles);
     return (
         <div>
             <h1>Super Cool Basic Front End App</h1>
